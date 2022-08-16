@@ -1,25 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import Main from "./Main.js"
+import Nav from "./Nav.js"
+import Contenedor from "./Contenedor.js"
 
-function App() {
+function DesplegarSeccionFiltrar(props) {
+
+  let mainContenido = 
+  <>
+  <header>
+      <Nav />      
+  </header>
+  <Main />
+  </>
+  ;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    {props.elemento}
+    <Contenedor content={mainContenido} />
+    </>
   );
+
+}
+
+
+function App(props) {
+  let usarContenedor;
+  let element;
+  if(props.desplegarSeccionFiltrar == "true") {
+    usarContenedor = false;
+    element = <DesplegarSeccionFiltrar elemento={props.elemento} /> ;
+  }else {
+  element = (
+    <>
+    <header>
+      <Nav filtroUbicacionActual={props.propiedadesFiltroUbicacion} />      
+    </header>
+    <Main propiedadesFiltroUbicacion={props.propiedadesFiltroUbicacion} propiedadesFiltroHuespedes={props.propiedadesFiltroHuespedes != null ? props.propiedadesFiltroHuespedes : 10} />
+    </>
+  );
+  }
+  return (
+    <Contenedor usarContenedor={usarContenedor} content={element} />
+  );
+
 }
 
 export default App;
