@@ -16,11 +16,11 @@ class SeccionFiltrar extends Component {
     let contenido = <NavFiltrar filtroHuespedesActual={this.state.filtroHuespedesActual} />;
     return (
       <>
-        <nav className="bg-white z-20 w-full fixed w-full opacity-100 py-5">
+        <nav className="bg-white h-screen sm:h-max z-20 w-full fixed w-full opacity-100 py-5">
           <Contenedor content={contenido} />
         </nav>
 
-        <div className="container h-full z-10 fixed bg-black opacity-20"> 
+        <div className="container h-full w-full z-10 fixed bg-black opacity-0"> 
         </div>
       </>
     );

@@ -9,7 +9,7 @@ class FormularioFiltrar extends Component {
     super(props);
     this.state = {
       filtroUbicacionActual: props.filtroUbicacionActual,
-      filtroHuespedesActual: 10
+      filtroHuespedesActual: ""
     };
     this.changeValueHuespedes = this.changeValueHuespedes.bind(this);
   }
@@ -22,12 +22,12 @@ class FormularioFiltrar extends Component {
 
   render() {
     return (
-    <form className="max-w-max text-base h-max border-r-2 shadow-md rounded-2xl">
-        <button className="border-r-2 pr-3 p-4 hover:underline" value="Finland" onClick={desplegarSeccionFiltrar}>{this.state.filtroUbicacionActual == null ? "Todos" : this.state.filtroUbicacionActual}</button>
+    <form className="justify-between text-base max-h-max border-r-2 shadow-md rounded-2xl flex mt-4 md:mt-0">
+        <button className="border-r-2 pr-3 p-4 hover:underline shrink-0" value="Finland" onClick={desplegarSeccionFiltrar}>{this.state.filtroUbicacionActual == null ? "Todos" : this.state.filtroUbicacionActual}</button>
 
-        <input className="ml-3 focus:outline-none p-4" type="number" max="10" min="0" placeholder="Máximo de personas" onChange={this.changeValueHuespedes} value={this.state.filtroHuespedesActual} />
+        <input className="focus:outline-none p-4 min-w-0 shrink w-full" type="text" max="10" min="0" placeholder="Máximo de personas" onChange={this.changeValueHuespedes} value={this.state.filtroHuespedesActual} />
         
-        <button className="overflow-hidden p-4 border-l-2">
+        <button className="overflow-hidden border-l-2 p-4 shrink-0">
           <i className="fa-solid fa-magnifying-glass text-red-500"></i>
         </button>
     </form>

@@ -8,9 +8,9 @@ function DesplegarSeccionFiltrar(props) {
   let mainContenido = 
   <>
   <header>
-      <Nav />      
-  </header>
-  <Main />
+      <Nav filtroUbicacionActual={props.propiedadesFiltroUbicacion} />      
+    </header>
+    <Main propiedadesFiltroUbicacion={props.propiedadesFiltroUbicacion != null ? props.propiedadesFiltroUbicacion : "Todo"} propiedadesFiltroHuespedes={props.propiedadesFiltroHuespedes != null ? props.propiedadesFiltroHuespedes : 10} />
   </>
   ;
 
@@ -36,7 +36,7 @@ function App(props) {
     <header>
       <Nav filtroUbicacionActual={props.propiedadesFiltroUbicacion} />      
     </header>
-    <Main propiedadesFiltroUbicacion={props.propiedadesFiltroUbicacion} propiedadesFiltroHuespedes={props.propiedadesFiltroHuespedes != null ? props.propiedadesFiltroHuespedes : 10} />
+    <Main propiedadesFiltroUbicacion={props.propiedadesFiltroUbicacion != null ? props.propiedadesFiltroUbicacion : "Todo"} propiedadesFiltroHuespedes={props.propiedadesFiltroHuespedes != null ? props.propiedadesFiltroHuespedes : 10} />
     </>
   );
   }

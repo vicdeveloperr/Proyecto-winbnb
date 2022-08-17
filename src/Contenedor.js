@@ -8,7 +8,7 @@ function Contenedor(props) {
   );
   }else {
   return (
-    <div className="w-5/6 m-auto static">
+    <div className="min-w-11/12 max-w-[1100px] m-auto static">
       {props.content}
     </div>
   );  

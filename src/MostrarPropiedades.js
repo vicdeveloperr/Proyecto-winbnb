@@ -35,7 +35,7 @@ function ElementoEspecificacionesPropiedad(props) {
 
 			
 	return (
-		<div className="mt-9 grid grid-cols-3 gap-x-5 gap-y-7 grid-rows-[repeat(4, minmax(0, max-content))] grid-flow-dense">
+		<div className="mt-9 grid grid-cols-1 570:grid-cols-2 1030:grid-cols-3 gap-x-5 gap-y-7 grid-rows-[repeat(4, minmax(0, max-content))] grid-flow-dense">
 			{propiedadesFiltradas[0] == null ? <h2 className="text-lg font-semibold text-red-500">No hay propiedades coincidentes :(</h2> : contenedorPropiedades} 
 		</div>
 	);
@@ -68,7 +68,7 @@ function filtrarPropiedades(props) {
 		});
 	}
 
-	if(props.filtroUbicacion == null) {
+	if(props.filtroUbicacion == "Todo") {
 		propiedades.map(propiedad => {
 			let huespedesPropiedad = Number(propiedad.maxGuests);
 			if(filtroHuespedes >= huespedesPropiedad){
