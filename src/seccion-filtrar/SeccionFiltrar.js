@@ -1,9 +1,9 @@
-import FormularioFiltrar from "./FormularioFiltrar.js";
+import FormularioFiltrar from "../nav/FormularioFiltrar.js";
 import React, { Component } from "react"
-import root from "./index"
-import App from "./App"
-import Contenedor from "./Contenedor"
-import FiltrarUbicacion from "./FiltrarUbicacion"
+import root from "../index"
+import App from "../App"
+import Contenedor from "../funcionalidades-principales/Contenedor"
+import FiltrarUbicacion from "./funcionalidades-SeccionFiltrar/FiltrarUbicacion"
 
 class SeccionFiltrar extends Component {
   constructor(props) {
@@ -16,12 +16,9 @@ class SeccionFiltrar extends Component {
     let contenido = <NavFiltrar filtroHuespedesActual={this.state.filtroHuespedesActual} />;
     return (
       <>
-        <nav className="bg-white h-screen sm:h-max z-20 w-full fixed w-full opacity-100 py-5">
+        <nav id="SeccionFiltrar" className="hidden bg-white h-screen sm:h-max z-20 w-full fixed w-full opacity-100 py-5">
           <Contenedor content={contenido} />
         </nav>
-
-        <div className="container h-full w-full z-10 fixed bg-black opacity-0"> 
-        </div>
       </>
     );
   

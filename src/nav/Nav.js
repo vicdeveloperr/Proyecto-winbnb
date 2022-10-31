@@ -1,5 +1,4 @@
-import Logo from "./multimedia/logo.png";
-import SeccionFiltrar from "./SeccionFiltrar.js";
+import Logo from "../multimedia/logo.png";
 import FormularioFiltrar from "./FormularioFiltrar.js";
 
 function Nav(props) {

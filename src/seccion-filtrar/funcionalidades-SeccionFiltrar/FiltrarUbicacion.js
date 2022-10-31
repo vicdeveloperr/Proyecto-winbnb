@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import actualizarPropiedades from "./actualizarPropiedades"
+import actualizarPropiedades from "../../funcionalidades-principales/actualizarPropiedades"
 
 class FiltrarUbicacion extends Component {
 	constructor(props) {
@@ -13,6 +13,7 @@ class FiltrarUbicacion extends Component {
 		let pasarProps = {filtroUbicacion: event.target.textContent, desplegarSeccionFiltrar: false}
 		actualizarPropiedades(pasarProps);
 		this.setState({ubicacion: event.target.textContent});
+		document.querySelector("#SeccionFiltrar").classList.add("hidden");
 	}
 
 	render() {
