@@ -5,7 +5,7 @@ function ContenedorEspecificacionesPropiedad(props) {
 	contenedorPropiedades = propiedadesFiltradas.map((propiedad, index) => {
 	return (
 		<div key={propiedad.title + index} className="opacity-90 hover:opacity-100 cursor-pointer">
-			<div className="rounded-xl overflow-hidden aspect-video">
+			<div className="rounded-xl overflow-hidden aspect-video max-h-[250px]">
 				<img className="object-cover" src={propiedad.photo} alt={propiedad.title} />
 			</div>
 			<p className="pt-4">
@@ -30,7 +30,7 @@ function ContenedorEspecificacionesPropiedad(props) {
 }
 
 function SuperAnfitrion(props) {
-	if(props.anfitrion == true) {
+	if(props.anfitrion === true) {
 		return (
 			<span className="rounded-xl border-black border-solid border-[1px] px-1 py-px font-normal mr-3">SUPER HOST</span>
 		);

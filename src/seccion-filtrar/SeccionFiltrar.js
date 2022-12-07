@@ -17,7 +17,7 @@ class SeccionFiltrar extends Component {
     return (
       <>
         <nav id="SeccionFiltrar" className="hidden bg-white h-screen sm:h-max z-20 w-full fixed w-full opacity-100 py-5">
-          <Contenedor content={contenido} />
+          <Contenedor usarContenedor={true} content={contenido} />
         </nav>
       </>
     );

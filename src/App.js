@@ -9,14 +9,18 @@ function App(props) {
   let element = (
     <>
       <header>
-        <SeccionFiltrar />     
         <Nav filtroUbicacionActual={props.propiedadesFiltroUbicacion} /> 
       </header>
-      <Main propiedadesFiltroUbicacion={props.propiedadesFiltroUbicacion != null ? props.propiedadesFiltroUbicacion : "Todo"} propiedadesFiltroHuespedes={props.propiedadesFiltroHuespedes != null ? props.propiedadesFiltroHuespedes : 10} />
+      <Main 
+        propiedadesFiltroUbicacion={props.propiedadesFiltroUbicacion != null ? props.propiedadesFiltroUbicacion : "Todo"} 
+        propiedadesFiltroHuespedes={props.propiedadesFiltroHuespedes != null ? props.propiedadesFiltroHuespedes : 10} />
     </>
   );
   return (
-    <Contenedor usarContenedor={usarContenedor} content={element} />
+    <>
+      <SeccionFiltrar /> 
+      <Contenedor usarContenedor={usarContenedor} content={element} />
+    </>
   );
 }
 
